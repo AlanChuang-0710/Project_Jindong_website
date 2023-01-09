@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京東首頁專案</title>
+    <meta name="description" content="">
+    <meta property=”og:title” content=””>
+    <meta property=”og:description” content=””>
+    <meta property=”og:type” content=”website”>
+    <meta property=”og:image” content=””>
+    <meta name="author" content="Alan Chuang">
+    <!-- 導入reset.css -->
+    <link rel="stylesheet" href="./css/reset.css">
+
+    <!-- 導入網站icon -->
+    <link rel="icon" href="./image/favicon.ico">
+
+    <!-- 導入index.css -->
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 導入font-awesome-icon 選擇CDN引入-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- 引入axios -->
+    <script src="./js/axios.js"></script>
+
+    <!-- 引入lodash -->
+    <script src="./js/lodash.js"></script>
+</head>
+
+<body>
+    <!-- 頭部開始 -->
+    <header>
+        <div class="wrap">
+            <h1 class="logo">
+                <a href="javascript:;">京東LOGO</a>
+            </h1>
+            <div class="search">
+                <div class="search-m">
+                    <div class="search-logo"></div>
+                    <div class="form">
+                        <input type="text" class="keyword" name="userSearch" placeholder="最夯聖誕禮物">
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <div class="search-remind"></div>
+                    </div>
+                    <div class="my-cart">
+                        <a href="#">
+                            <span><i class="fa-sharp fa-solid fa-cart-shopping"></i> &nbsp我的購物車</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="hot-search">
+                <li><a href="./detail.html">聖誕活動</a></li>
+                <li><a href="./detail.html">禮物</a></li>
+                <li><a href="./detail.html">活動大餐</a></li>
+                <li><a href="./detail.html">蘋果電腦</a></li>
+                <li><a href="./detail.html">數據線</a></li>
+                <li><a href="./detail.html">平板</a></li>
+                <li><a href="./detail.html">手機</a></li>
+                <li><a href="./detail.html">食品</a></li>
+                <li><a href="./detail.html">家電</a></li>
+                <li><a href="./detail.html">戶外</a></li>
+                <li><a href="./detail.html">個人清潔</a></li>
+            </ul>
+            <div class="qrcode">
+                <img src="./image/qrCode.jpg" alt="微信qrcode" srcset="">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主內容開始 -->
+    <main class="banner">
+        <div class="wrap">
+            <div class="left-nav-wrapper">
+                <ul class="left-nav">
+                    <li class="item"><a href="javascript:;">手機</a>/<a href="javascript:;">運營商</a>/<a
+                            href="javascript:;">數碼</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">食品</a>/<a href="javascript:;">生鮮</a>/<a
+                            href="javascript:;">蔬菜</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">旅遊</a>/<a href="javascript:;">旅館</a>/<a
+                            href="javascript:;">餐廳</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">出遊</a>/<a href="javascript:;">野餐</a>/<a
+                            href="javascript:;">戶外</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">安裝</a>/<a href="javascript:;">維修</a>/<a
+                            href="javascript:;">清洗</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">藝術</a>/<a href="javascript:;">禮品生鮮</a>/<a
+                            href="javascript:;">特產</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">行李箱與包包</a>/<a href="javascript:;">女鞋</a>/<a
+                            href="javascript:;">男鞋</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">運動</a>/<a href="javascript:;">戶外</a>/<a
+                            href="javascript:;">登山</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">汽車用品</a>/<a href="javascript:;">車用電器</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">母嬰</a>/<a href="javascript:;">玩具樂器</a>/<a
+                            href="javascript:;">益智遊戲</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">寵物</a>/<a href="javascript:;">生活</a>/<a
+                            href="javascript:;">保養品</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">家庭清潔</a>/<a href="javascript:;">個人護理</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">圖書</a>/<a href="javascript:;">童書</a>/<a
+                            href="javascript:;">信紙</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">休閒食品</a>/<a href="javascript:;">禮品</a>/<a
+                            href="javascript:;">贈品</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">寢具</a>/<a href="javascript:;">傢俱</a>/<a
+                            href="javascript:;">廚房用具</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">盆景</a>/<a href="javascript:;">植栽</a>/<a
+                            href="javascript:;">花草種子</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">新鮮食材</a>/<a href="javascript:;">有機認證</a>
+                    </li>
+                    <li class="item"><a href="javascript:;">旅遊票券</a>/<a href="javascript:;">飯店</a>/<a
+                            href="javascript:;">景點團票</a>
+                    </li>
+                </ul>
+                <div class="left-nav-show">
+                </div>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <a href="javascript:;">
+                        <img class="carousel-img" src="./image/1.webp" alt="八種熱門推薦產品">
+                    </a>
+                    <a href="javascript:;" class="prev"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="javascript:;" class="next"><i class="fa-solid fa-chevron-right"></i></a>
+                    <ul class="banner-btn">
+                        <li class="active"><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                    </ul>
+                </div>
+                <div class="recommend">
+                    <div class="recom-1">
+                        <a href="javascript:;"><img src="./image/recom-1.jpg" alt="熱門推薦產品"></a>
+                    </div>
+                    <div class="recom-2">
+                        <a href="javascript:;"><img src="./image/recom-2.jpg" alt="熱門推薦產品"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="user-img-container">
+                    <div class="user-img">
+                        <img src="./image/user-img.png" alt="使用者AI頭像">
+                    </div>
+                </div>
+                <div class="login">
+                    <p>Hi~歡迎來到京東!</p>
+                    <a href="javascript:;">登錄</a>
+                    <a href="javascript:;">註冊</a><br>
+                    <a class="userbtn btnNew">新人福利</a>
+                    <a class="userbtn btnPlus">PLUS會員</a>
+                </div>
+                <div class="payInfo">
+                    <div class="local-service">本地服務 <a href="javascript:;">企業招採諮詢</a></div>
+                    <div class="payDetail">
+                        <a href="javascript:;"><i class="fa-regular fa-credit-card"></i>在線服務</a>
+                        <a href="javascript:;"><i class="fa-solid fa-credit-card"></i>國際支付</a>
+                        <a href="javascript:;"><i class="fa-sharp fa-solid fa-truck"></i>正品直送</a>
+                        <a href="javascript:;"><i class="fa-regular fa-credit-card"></i>售後服務</a>
+                    </div>
+                    <ul>
+                        <li><img src="./image/payDetail-1.png" alt="付款方式示意圖"></li>
+                        <li><img src="./image/payDetail-2.png" alt="付款方式示意圖"></li>
+                        <li><img src="./image/payDetail-3.png" alt="付款方式示意圖"></li>
+                        <li><img src="./image/payDetail-4.png" alt="付款方式示意圖"></li>
+                        <li><img src="./image/payDetail-5.png" alt="付款方式示意圖"></li>
+                        <li><img src="./image/payDetail-6.png" alt="付款方式示意圖"></li>
+                    </ul>
+                </div>
+                <div class="otherInfo">
+                    <div>
+                        <p>台灣特訊 <span> <a href="javascript:;"> 更多 &gt</a></span></p>
+                    </div>
+                    <p><a href="javascript:;">提醒消費者防範詐騙&gt</a></p>
+                    <p><a href="javascript:;">台灣物流延遲通知&gt</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 各種推薦 -->
+    <div class="content">
+        <div class="wrap">
+            <ul class="elevator">
+                <li><a href="#miaosa">京東<br>秒殺</a></li>
+                <li><a href="#youxuan">特色<br>優選</a></li>
+                <li><a href="#guanchang">頻道<br>廣場</a></li>
+                <li><a href="#tuijian">為你<br>推薦</a></li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa-regular fa-message"></i><br> 客服
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa-solid fa-envelope-open-text"></i> <br>反饋
+                    </a>
+                </li>
+            </ul>
+            <section class="miaosa item" id="miaosa">
+                <div class="miaosa-title">
+                    <div>
+                        <h3>京東秒殺</h3>
+                        <p>FLASH DEALS</p>
+                    </div>
+                    <div class="lighten">
+                        <i class="fa-sharp fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <p>本場距離結束還剩</p>
+                    </div>
+                    <div class="left-time">
+                        <div class="hour">00</div>
+                        <div class="minute"></div>
+                        <div class="second"></div>
+                    </div>
+                </div>
+                <div class="miaosa-view">
+                    <ul class="miaosa-slide">
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 1.webp" alt="老中醫植草補水面膜">
+                                <p class="item-name">老中醫 植草補水面膜呵護不傷肌</p>
+                                <p class="item-price">¥39.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 2.webp" alt="花木星球洗衣液">
+                                <p class="item-name">花木星球 胺基酸小分子天然洗衣液</p>
+                                <p class="item-price">¥49.90</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 3.webp" alt="良品舖子手撕麵包">
+                                <p class="item-name">良品舖子 手撕麵包 早餐小麵包辦公室代餐休閒零食</p>
+                                <p class="item-price">¥39.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 4.webp" alt="三星The Freestyle 隨享投影儀">
+                                <p class="item-name">三星The Freestyle 隨享投影儀 (1080p 180度投射角)</p>
+                                <p class="item-price">¥4249.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 5.webp" alt="得力(deli)輕型兩用衝擊鑽">
+                                <p class="item-name">得力(deli)輕型兩用衝擊鑽 配鑽頭應急常備</p>
+                                <p class="item-price">¥359.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 6.webp" alt="華為智選 麥芒9">
+                                <p class="item-name">華為智選 麥芒 9 5G 6400萬高清三攝6.8英寸全高清大屏 4300mAh大電池8GB+128GB幻夜黑5G雙模六頻全網</p>
+                                <p class="item-price">¥999.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 7.webp" alt="先馬（SAMA）魯班1 黑色 遊戲電腦主主機">
+                                <p class="item-name">先馬（SAMA）魯班1 黑色 遊戲電腦主主機殼 玻璃側透/寬體五金/獨立電源倉/支持長顯卡/背線/360水冷/E-ATX主機板</p>
+                                <p class="item-price">¥186.90</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 1.webp" alt="老中醫 植草補水面膜">
+                                <p class="item-name">老中醫 植草補水面膜呵護不傷肌</p>
+                                <p class="item-price">¥39.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 2.webp" alt="花木星球 胺基酸小分子天然洗衣液">
+                                <p class="item-name">花木星球 胺基酸小分子天然洗衣液</p>
+                                <p class="item-price">¥49.90</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 3.webp" alt="良品舖子 手撕麵包">
+                                <p class="item-name">良品舖子 手撕麵包 早餐小麵包辦公室代餐休閒零食</p>
+                                <p class="item-price">¥39.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 4.webp" alt="三星The Freestyle 隨享投影儀">
+                                <p class="item-name">三星The Freestyle 隨享投影儀 (1080p 180度投射角)</p>
+                                <p class="item-price">¥4249.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 5.webp" alt="得力(deli)輕型兩用衝擊鑽">
+                                <p class="item-name">得力(deli)輕型兩用衝擊鑽 配鑽頭應急常備</p>
+                                <p class="item-price">¥359.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 6.webp" alt="華為智選 麥芒">
+                                <p class="item-name">華為智選 麥芒 9 5G 6400萬高清三攝6.8英寸全高清大屏 4300mAh大電池8GB+128GB幻夜黑5G雙模六頻全網</p>
+                                <p class="item-price">¥999.00</p>
+                            </a>
+                        </li>
+                        <li class="miaosa-item">
+                            <a href="javascript:;">
+                                <img src="./image/miaosa 7.webp" alt="先馬（SAMA）魯班1 黑色 遊戲電腦主主機殼">
+                                <p class="item-name">先馬（SAMA）魯班1 黑色 遊戲電腦主主機殼 玻璃側透/寬體五金/獨立電源倉/支持長顯卡/背線/360水冷/E-ATX主機板</p>
+                                <p class="item-price">¥186.90</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="youxuan item" id="youxuan">
+                <h3 class="section-title">- 精選分類 -</h3>
+                <ul class="section-list">
+                    <li class="youxuan-item">
+                        <a href="javascript:;">
+                            <img src="./image/youxuan 1.webp" alt="為你優選">
+                        </a>
+                    </li>
+                    <li class="youxuan-item">
+                        <a href="javascript:;">
+                            <img src="./image/youxuan 2.webp" alt="為你優選">
+                        </a>
+                    </li>
+                    <li class="youxuan-item">
+                        <a href="javascript:;">
+                            <img src="./image/youxuan 3.webp" alt="為你優選">
+                        </a>
+                    </li>
+                    <li class="youxuan-item">
+                        <a href="javascript:;">
+                            <img src="./image/youxuan 4.webp" alt="為你優選">
+                        </a>
+                    </li>
+                    <li class="youxuan-item">
+                        <a href="javascript:;">
+                            <img src="./image/youxuan 5.webp" alt="為你優選">
+                        </a>
+                    </li>
+                    <li class="youxuan-item">
+                        <a href="javascript:;">
+                            <img src="./image/youxuan 6.webp" alt="為你優選">
+                        </a>
+                    </li>
+                    <li class="youxuan-item">
+                        <a href="javascript:;">
+                            <img src="./image/youxuan 7.webp" alt="為你優選">
+                        </a>
+                    </li>
+                    <li class="youxuan-item">
+                        <a href="javascript:;">
+                            <img src="./image/youxuan 8.webp" alt="為你優選">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="guanchang item" id="guanchang">
+                <h3 class="section-title">- 頻道廣場 -</h3>
+                <div class="guanchang-row section-list">
+                    <div class="guanchang-main-item">
+                        <a href="javascript:;">
+                            <p>精選品質家電</p>
+                            <p>至高24期免息</p>
+                            <div class="main-item-img">
+                                <img src="./image/guanchang-main-item_1.png" alt="生鮮推薦好物">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="guanchang-main-item">
+                        <a href="javascript:;">
+                            <p>生鮮館</p>
+                            <p>爆款限時低價</p>
+                            <div class="main-item-img">
+                                <img src="./image/guanchang-main-item_2.png" alt="爆款生鮮館">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="guanchang-item-wrap">
+                        <div>
+                            <a href="javascript:;">
+                                <p>電腦辦公 <span>科技潮物 優惠不停</span></p>
+                                <div class="guanchang-item">
+                                    <img src="./image/guanchang-item_1.webp" alt="科技潮物">
+                                </div>
+                                <div class="guanchang-item">
+                                    <img src="./image/guanchang-item_2.webp" alt="科技潮物">
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="javascript:;">
+                                <p>京東國際 <span>一站享盡進口好物</span></p>
+                                <div class="guanchang-item">
+                                    <img src="./image/guanchang-item_5.webp" alt="進口精選品">
+                                </div>
+                                <div class="guanchang-item">
+                                    <img src="./image/guanchang-item_6.webp" alt="進口精選品">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="guanchang-item-wrap">
+                        <div>
+                            <a href="javascript:;">
+                                <p>京東手機 <span>一個極致的誕生</span></p>
+                                <div class="guanchang-item">
+                                    <img src="./image/guanchang-item_3.jpg" alt="科技潮品">
+                                </div>
+                                <div class="guanchang-item">
+                                    <img src="./image/guanchang-item_4.jpg" alt="科技潮品">
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="javascript:;">
+                                <p>拍拍二手 <span>大牌一元價</span></p>
+                                <div class="guanchang-item">
+                                    <img src="./image/guanchang-item_7.webp" alt="二手好物">
+                                </div>
+                                <div class="guanchang-item">
+                                    <img src="./image/guanchang-item_8.jpg" alt="二手好物">
+                                </div>
+                            </a>
+                        </div>
+                    </div class="guanchang-item">
+                </div>
+            </section>
+            <section class="tuijian item" id="tuijian">
+                <h3 class="section-title">- 為你推薦 - </h3>
+                <ul class="section-list">
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 1.webp" alt="瑪莎蘭緹(MashaLanti) 男士錢包">
+                            <p class="item-name">瑪莎蘭緹(MashaLanti) 男士錢包多卡位元錢夾大容量長款皮夾卡包男 D2577咖啡色</p>
+                            <p class="item-price">¥99.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 2.webp" alt="畢亞茲 安卓蘋果轉接頭轉換器">
+                            <p class="item-name">畢亞茲 安卓蘋果轉接頭轉換器 type-c轉lightning充電資料線
+                                支持iPhone14/13Pro/Max/12/XR/8Plus/11/6s P37</p>
+                            <p class="item-price">¥19.90</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 3.webp" alt="夢潔 床上用品 純棉條格印花四件套">
+                            <p class="item-name">夢潔 床上用品 純棉條格印花四件套 床單被套 皇家不列顛 1.5米床 200*230cm</p>
+                            <p class="item-price">¥349.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 4.webp" alt="恒源祥皮手套">
+                            <p class="item-name">恒源祥皮手套女冬季加絨保暖觸屏開車騎車戶外騎行女士秋季防潑水防風摩托車皮手套加厚防寒 50M18910 黑色</p>
+                            <p class="item-price">¥89.10</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 5.webp" alt="利仁（Liven） 刀具筷子消毒機">
+                            <p class="item-name">利仁（Liven） 刀具筷子消毒機家用全自動廚房臭氧殺毒除菌機多功能熱風烘乾收納刀筷架筷子筒XDJ-35（白色）</p>
+                            <p class="item-price">¥119.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 6.webp" alt="歐樂菲（OLOFE）烤肉煎烤盤平底燒">
+                            <p class="item-name">歐樂菲（OLOFE）烤肉煎烤盤平底燒烤戶外爐具不粘露營麥飯石色電磁卡式爐家用33CM</p>
+                            <p class="item-price">¥89.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 7.webp" alt="HIKVISION海康威視N6行車記錄儀高清夜視">
+                            <p class="item-name">HIKVISION海康威視N6行車記錄儀高清夜視 前後雙錄雙鏡頭 流媒體後視鏡倒車影像IPS觸控式螢幕</p>
+                            <p class="item-price">¥529.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 8.webp" alt="領臣 手機支架平板支架懶人支架直播支架">
+                            <p class="item-name">領臣 手機支架平板支架懶人支架直播支架 桌面床頭夾 抖音視頻可調節支架蘋果三星華為手機通用 100cm黑色</p>
+                            <p class="item-price">¥24.90</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 9.webp" alt="金利來（Goldlion）鑰匙包男士汽車鑰匙包">
+                            <p class="item-name">金利來（Goldlion）鑰匙包男士汽車鑰匙包腰掛壓花紋頭層牛皮多功能拉鍊鎖匙包扣 黑 FA721304-511 生日禮物送男友送老公送爸爸
+                            </p>
+                            <p class="item-price">¥199.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 10.webp" alt="紫湖 搖號機 雙色球大樂透彩票模擬選號器">
+                            <p class="item-name">紫湖 搖號機 雙色球大樂透彩票模擬選號器 便攜手搖口袋迷你開獎器
+                            </p>
+                            <p class="item-price">¥35.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 11.webp" alt="TECLAST 22.5W超級快充">
+                            <p class="item-name">TECLAST 22.5W超級快充 20000毫安培時充電寶PD20W便攜小巧大容量數顯移動電源適用于蘋果14華為mate50安卓手機</p>
+                            <p class="item-price">¥99.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 12.webp" alt="3AnGnI 抗菌防臭鞋墊">
+                            <p class="item-name">3AnGnI 抗菌防臭鞋墊男 透氣吸汗除臭皮鞋鞋墊女艾草淨味5雙裝43碼</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 13.webp" alt="紅雙喜DHS 省狂飆3 省狂3套膠">
+                            <p class="item-name">紅雙喜DHS 省狂飆3 省狂3套膠 乒乓球拍膠皮反膠 黑色39度2.2</p>
+                            <p class="item-price">¥199.00</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 14.webp" alt="加加林（JAJALIN） 光學手持放大鏡">
+                            <p class="item-name">加加林（JAJALIN） 光學手持放大鏡仿紅木閱讀鑒賞塑膠邊框ABS柄清晰口徑80MM 放大鏡</p>
+                            <p class="item-price">¥14.90</p>
+                        </a>
+                    </li>
+                    <li class="tuijian-item">
+                        <a href="javascript:;">
+                            <img data-src="./image/tuijian 15.webp" alt="聯想 昭陽E5-ITL">
+                            <p class="item-name">聯想 昭陽E5-ITL
+                                (win10專業版)i7-1165G7/40G記憶體/1TB固態+2T機械/MX450獨顯/定制15.6英寸商務娛樂筆記本</p>
+                            <p class="item-price">¥7999.00</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- 尾部開始 -->
+    <footer>
+        <div class="wrap">
+            <ul>
+                <li><i>多</i> 種類齊全，輕鬆購物</li>
+                <li><i>快</i> 多倉直發，急速配送</li>
+                <li><i>好</i> 正品好貨，精緻服務</li>
+                <li><i>省</i> 天天低價，暢選無憂</li>
+            </ul>
+            <div class="service-list">
+                <div class="logo">
+                    <img src="./image/logo.png" alt="京東台灣logo">
+                </div>
+                <div class="detail-service">
+                    <dl>
+                        <dt>購物指南</dt>
+                        <dd><a href="javascript:;">購物流程</a></dd>
+                        <dd><a href="javascript:;">會員簡介</a></dd>
+                        <dd><a href="javascript:;">常見問題</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>物流配送</dt>
+                        <dd><a href="javascript:;">運費說明</a></dd>
+                        <dd><a href="javascript:;">關稅說明</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>幫助中心</dt>
+                        <dd><a href="javascript:;">付款方式</a></dd>
+                        <dd><a href="javascript:;">價格保證</a></dd>
+                        <dd><a href="javascript:;">帳戶安全</a></dd>
+                        <dd><a href="javascript:;">用戶隱私協議</a></dd>
+                        <dd><a href="javascript:;">全球售服務協議</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>聯繫我們</dt>
+                        <dd><a href="javascript:;">客服聯絡</a></dd>
+                        <dd><a href="javascript:;">商務合作</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <p>
+                <a href="javascript:;">關於我們 <span>|</span></a>
+                <a href="javascript:;">聯繫我們 <span>|</span></a>
+                <a href="javascript:;">聯繫客服 <span>|</span></a>
+                <a href="javascript:;">合作諮詢 <span>|</span></a>
+                <a href="javascript:;">商家幫助 <span>|</span></a>
+                <a href="javascript:;">營銷中心 <span>|</span></a>
+                <a href="javascript:;">手機京東 <span>|</span></a>
+                <a href="javascript:;">友情鏈接 <span>|</span></a>
+                <a href="javascript:;">銷售聯盟 <span>|</span></a>
+                <a href="javascript:;">京東社區 <span>|</span></a>
+                <a href="javascript:;">風險監測 <span>|</span></a>
+                <a href="javascript:;">隱私政策 <span>|</span></a>
+                <a href="javascript:;">京東公益 <span>|</span></a>
+                <a href="javascript:;">English Site <span>|</span></a>
+                <a href="javascript:;">Media & IR</a>
+            </p>
+
+        </div>
+    </footer>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
