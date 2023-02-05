@@ -8,17 +8,6 @@ app.get("/server", (request, response) => {
     response.setHeader("Access-Control-Allow-Headers", "*");
     let { index } = request.query;
     let data;
-    // const data = [
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    //     leftNavShow_phone, leftNavShow_freshFood,
-    // ]
     if (index % 2) {
         data = leftNavShow_phone;
     } else if (index % 2 === 0) {
