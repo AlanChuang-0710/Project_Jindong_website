@@ -111,11 +111,13 @@
                     url: "http://127.0.0.1:3000/server",
                     params: {
                         user: "Alan",
-                        level: 40
+                        level: 40,
+                        index
                     },
+
                     timeout: 2000,
                 }).then((response) => {
-                    leftNavShow.innerHTML = response.data[index];
+                    leftNavShow.innerHTML = response.data;
                 }).catch((err) => {
                     console.log(err);
                 })
